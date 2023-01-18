@@ -16,21 +16,21 @@ namespace WebApi.Controllers
     {
         // GET: api/<InvoiceController>
         [HttpGet]
-        public IEnumerable<Invoice> Get()
-        {
-            return new List<Invoice>();
-        }
-
-        // GET api/<InvoiceController>/5
-        [HttpGet("{startDate}/{endDate}")]
-        public async Task<Invoice> Get(DateTime startDate, DateTime endDate)
+        public async Task<Invoice> SingleInvoice()
         {
             return new Invoice();
         }
 
+        // GET api/<InvoiceController>/5
+        [HttpGet("{startDate}/{endDate}")]
+        public async Task<List<Invoice>> InvoiceList(DateTime startDate, DateTime endDate)
+        {
+            return new List<Invoice>();
+        }
+
         // POST api/<InvoiceController>
         [HttpPost]
-        public async Task<Invoice> PostInvoice([FromBody] InvoiceSaveResource request)
+        public async Task<Invoice> InvoiceSave([FromBody] InvoiceSaveResource request)
         {
 
 
