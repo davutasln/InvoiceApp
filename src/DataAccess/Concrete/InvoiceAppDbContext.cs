@@ -4,16 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entity.Persistence
+namespace DataAccess.Concrete
 {
     public class InvoiceAppDbContext : DbContext
     {
         public InvoiceAppDbContext(DbContextOptions<InvoiceAppDbContext> options) : base(options)
         {
-            DbInitializer.Initialize(this);
         }
 
-        protected InvoiceAppDbContext() : base()
+        public InvoiceAppDbContext() : base()
         {
 
         }

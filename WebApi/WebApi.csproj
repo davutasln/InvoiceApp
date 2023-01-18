@@ -2,9 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>WebApi.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\src\Business\Business.csproj" />
+    <ProjectReference Include="..\src\DataAccess\DataAccess.csproj" />
     <ProjectReference Include="..\src\Entity\Entity.csproj" />
   </ItemGroup>
 

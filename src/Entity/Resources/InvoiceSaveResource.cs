@@ -10,7 +10,7 @@ namespace Entity.Resources
 
         public decimal TotalAmount { get; set; }
 
-        List<InvoiceSaveLineResource> InvoiceLines { get; set; }
+        public List<InvoiceSaveLineResource> InvoiceLines { get; set; }
     }
 
     public class InvoiceSaveLineResource

@@ -1,4 +1,4 @@
-﻿using Entity.Persistence;
+﻿using DataAccess.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entity
+namespace DataAccess
 {
     public static class ServiceRegistration
     {
