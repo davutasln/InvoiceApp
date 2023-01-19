@@ -115,7 +115,7 @@ namespace WebApi.Controllers
                 {
                     Return.Meta.IsSuccess = false;
                     Return.Meta.Error = "customer.is.not.found";
-                    Return.Meta.ErrorMessage = "Seçilen müşteri bulunamadı. Lütfen mevcut bir möüşteri seçin veya yeni bir müşteri ekleyin";
+                    Return.Meta.ErrorMessage = "Seçilen müşteri bulunamadı. Lütfen mevcut bir müşteri seçin veya yeni bir müşteri ekleyin";
                     return Return;
                 }
 

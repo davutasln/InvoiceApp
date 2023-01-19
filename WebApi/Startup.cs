@@ -32,6 +32,17 @@ namespace WebApi
         {
             //services.AddDbContext<InvoiceAppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddPersistenceRegistration(Configuration);
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllHeaders",
+                      builder =>
+                      {
+                          builder.AllowAnyOrigin()
+                                 .AllowAnyHeader()
+                                 .AllowAnyMethod();
+                      });
+            });
             services.AddControllers();
         }
 
@@ -45,6 +56,7 @@ namespace WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("AllowAllHeaders");
             app.UseHttpsRedirection();
 
             app.UseRouting();
