@@ -6,7 +6,7 @@ namespace Entity.Resources
 {
     public class ListRequestModel
     {
-        public string startDate { get; set; }
-        public string endDate { get; set; }
+        public DateTime startDate { get; set; }
+        public DateTime endDate { get; set; }
     }
 }

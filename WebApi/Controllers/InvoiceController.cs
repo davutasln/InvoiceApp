@@ -61,20 +61,13 @@ namespace WebApi.Controllers
                     return Return;
                 }
 
-                var invoices = _context.Invoices.ToList();
-
-                var startDate = DateTime.Parse(listRequestModel.startDate);
-                var endDate = DateTime.Parse(listRequestModel.endDate);
+                var invoices = _context.Invoices.Include(c => c.Customer).ToList();
 
                 if (listRequestModel.startDate != null)
-                {
-                    invoices = invoices.Where(c => c.InvoiceDate > startDate).ToList();
-                }
+                    invoices = invoices.Where(c => c.InvoiceDate > listRequestModel.startDate).ToList();
 
                 if (listRequestModel.startDate != null)
-                {
-                    invoices = invoices.Where(c => c.InvoiceDate < endDate).ToList();
-                }
+                    invoices = invoices.Where(c => c.InvoiceDate < listRequestModel.endDate).ToList();
 
                 Return.Entities = invoices;
             }

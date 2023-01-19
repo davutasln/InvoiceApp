@@ -8,8 +8,6 @@ namespace Entity.Resources
     {
         public int CustomerId { get; set; }
 
-        public decimal TotalAmount { get; set; }
-
         public List<InvoiceSaveLineResource> InvoiceLines { get; set; }
     }
 
