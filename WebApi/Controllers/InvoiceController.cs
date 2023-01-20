@@ -119,7 +119,7 @@ namespace WebApi.Controllers
                         CustomerId = customer.ID,
                         InvoiceNumber = StringProcess.GenerateInvoiceNuumber(),
                         TotalAmount = request.InvoiceLines.Sum(s => s.Quantity * s.Price),
-                        InvoiceDate = DateTime.Now,
+                        InvoiceDate = DateProcess.GenerateRandomDate(),
                         CreatedDate = DateTime.Now,
                     };
 

@@ -20,30 +20,30 @@ namespace DataAccess.Concrete
                 _context.Customers.Add(
                     new Customer
                     {
-                        Address = "Çukurova Üniversitesi Teknokent Sitesi B Blok B110 Sarıçam/Adana",
+                        Address = "Çukurova Üniversitesi Teknokent Sitesi Sarıçam/Adana",
                         Email = "davut@test.com",
-                        Title = "Davut ASLAN",
-                        TaxNumber = "11234325",
+                        Title = "Davut",
+                        TaxNumber = GenerateTaxNumber(),
                         CreatedDate = DateTime.Now,
                     });
 
                 _context.Customers.Add(
                     new Customer
                     {
-                        Address = "Çukurova Üniversitesi Teknokent Sitesi B Blok B110 Sarıçam/Adana",
+                        Address = "542 W. Honey Creek St. Hattiesburg, MS 39401",
                         Email = "joel@test.com",
                         Title = "Joel",
-                        TaxNumber = "11234325",
+                        TaxNumber = GenerateTaxNumber(),
                         CreatedDate = DateTime.Now,
                     });
 
                 _context.Customers.Add(
                     new Customer
                     {
-                        Address = "Çukurova Üniversitesi Bilgisayar Mühendisliği Sarıçam/Adana",
+                        Address = "12 Winchester Road Avon, IN 46123",
                         Email = "ellie@test.com",
                         Title = "Ellie",
-                        TaxNumber = "11234325",
+                        TaxNumber = GenerateTaxNumber(),
                         CreatedDate = DateTime.Now,
                     });
 
@@ -53,6 +53,12 @@ namespace DataAccess.Concrete
             {
                 Console.WriteLine($"Database Create Exception Error : {ex.Message}");
             }
+        }
+
+        public static string GenerateTaxNumber()
+        {
+            Random random = new Random();
+            return $"{random.Next(1000000000, int.MaxValue)}";
         }
     }
 }
